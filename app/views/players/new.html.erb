@@ -1,6 +1,13 @@
 <h1>Create a new player here</h1>
 
-<form action="/players" method="post">
+<% if flash[:errors] %>
+  <% flash[:errors].each do |err| %>
+    <p><%= err %></p>
+  <% end %>
+<% end %>
+
+<form action="/players" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>
     <label>First Name:</label>
     <input type="text" name="player[first_name]">
