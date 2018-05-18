@@ -1,0 +1,18 @@
+<h1>There are <%= @players.count %> players in our league</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>First Name</td>
+      <td>Last Name</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @players.each do |player| %>
+    <tr>
+      <td><%= player.first_name %></td>
+      <td><%= player.last_name %></td></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
