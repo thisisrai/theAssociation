@@ -5,6 +5,7 @@
     <tr>
       <td>First Name</td>
       <td>Last Name</td>
+      <td>Action</td>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +13,10 @@
     <tr>
       <td><%= player.first_name %></td>
       <td><%= player.last_name %></td></td>
+      <td>
+        <a href="/players/<%= player.id %>">show</a> | 
+        <a href="/players/<%= player.id %>/edit">edit</a>
+      </td>
     </tr>
     <% end %>
   </tbody>
