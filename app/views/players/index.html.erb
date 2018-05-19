@@ -15,7 +15,8 @@
       <td><%= player.last_name %></td></td>
       <td>
         <a href="/players/<%= player.id %>">show</a> | 
-        <a href="/players/<%= player.id %>/edit">edit</a>
+        <a href="/players/<%= player.id %>/edit">edit</a> |
+        <a href="/players/<%= player.id %>" data-method="delete" data-confirm="Are you sure?">delete</a>
       </td>
     </tr>
     <% end %>

@@ -19,6 +19,27 @@ class PlayersController < ApplicationController
   end
 
   def edit
+    @player = Player.find(id_params)
+  end
+
+  def patch
+    player = Player.find(id_params)
+    if player.update(player_params)
+      redirect_to "/players"
+    else
+      flash[:errors] = player.errors.full_messages
+      redirect_to "/players/#{id_params}/edit"
+    end
+  end
+
+  def delete
+    player = Player.find(id_params)
+    if player.delete
+      redirect_to "/players"
+    else
+      flash[:errors] = player.errors.full_messages
+      redirect_to "/players"
+    end
   end
 
   def player_params
