@@ -14,13 +14,15 @@
       <td><%= player.first_name %></td>
       <td><%= player.last_name %></td></td>
       <td>
-        <a href="/players/<%= player.id %>">show</a> | 
-        <a href="/players/<%= player.id %>/edit">edit</a> |
-        <a href="/players/<%= player.id %>" data-method="delete" data-confirm="Are you sure?">delete</a>
+        <%= link_to "Show", player_path(player.id)%> | 
+        <%= link_to "Edit", player_edit_path(player.id)%> | 
+        <%= link_to "Delete", player_path(player.id), data: {method: "delete", confirm: "Are you sure?"}%>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
 
-<a href="players/new">Create New Player</a>
+<%# <a href="players/new">Create New Player</a> %>
+
+<%= link_to "Create New Player", players_new_path%>
